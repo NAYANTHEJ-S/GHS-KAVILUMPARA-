@@ -1,5 +1,5 @@
 # GHS-KAVILUMPARA-
-This is a website for school 
+This is a website for school
 <!DOCTYPE html>
 <html lang="ml">
 <head>
@@ -417,15 +417,11 @@ footer h3{
     <div class="cards">
         <div class="card">
             <h3>ഹെഡ്മിസ്ട്രസ്</h3>
-            <p><strong>ശ്രീജ പി</strong></p>
-        </div>
-        <div class="card">
-            <h3>സീനിയർ അസിസ്റ്റന്റ്</h3>
-            <p><strong>ഷീല ആന്റണി</strong></p>
-        </div>
+            <p><strong>ശ്രീജ പി ഇ</strong></p>
+        <div>
         <div class="card">
             <h3>പി.ടി.എ പ്രസിഡണ്ട്</h3>
-            <p><strong>രാജീവ്</strong></p>
+            <p><strong>രാജീവൻ</strong></p>
         </div>
     </div>
 </section>
@@ -562,7 +558,7 @@ footer h3{
     <h3>ജി.എച്ച്.എസ് കാവിലുംപാറ ഔദ്യോഗിക വെബ്സൈറ്റ്</h3>
     
     <div class="credit-box">
-        <p class="credit">💻 Made By Little Kites Unit GHS KAVILUMPARA and NAYANTHEJ . S.</p>
+        <p class="credit">💻 Made By Little Kites Unit GHS KAVILUMPARA & NAYANTHEJ . S.</p>
     </div>
 
     <p class="copyright">Copyright © GHS Kavilumpara. All Rights Reserved.</p>
