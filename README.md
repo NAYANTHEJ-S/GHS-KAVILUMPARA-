@@ -356,7 +356,7 @@ footer h3{
             <h3>ഹെഡ്മിസ്ട്രസ്</h3>
             <p><strong>ശ്രീജ പി</strong></p>
         </div>
- 
+ <div>
         <div class="card">
             <h3>പി.ടി.എ പ്രസിഡണ്ട്</h3>
             <p><strong>രാജീവ്</strong></p>
