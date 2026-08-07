@@ -22,37 +22,46 @@ body{
     line-height: 1.8;
 }
 
-/* HEADER */
+/* HEADER & LOGO */
 header{
     background: linear-gradient(135deg, #0d3b66, #005f73, #0a9396);
     color: white;
     text-align: center;
-    padding: 50px 20px;
+    padding: 40px 20px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
 
-.logo-container {
-    width: 100px;
-    height: 100px;
+.school-logo {
+    width: 110px;
+    height: 110px;
     background: #ffffff;
+    border: 4px solid #ee9b00;
     border-radius: 50%;
     margin: 0 auto 15px auto;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.3);
 }
 
 .logo-icon {
-    font-size: 48px;
+    font-size: 40px;
+    line-height: 1;
+}
+
+.logo-text {
+    font-size: 10px;
+    font-weight: bold;
     color: #0d3b66;
+    margin-top: 4px;
 }
 
 header h1{
-    font-size: 42px;
+    font-size: 40px;
     font-weight: 700;
     margin-bottom: 8px;
-    letter-spacing: 0.5px;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
 }
 
 header p{
@@ -91,6 +100,40 @@ nav ul li a{
 nav ul li a:hover{
     background: #0a9396;
     color: #ffffff;
+}
+
+/* ANIMATED NOTICE TICKER */
+.ticker-container {
+    background: #001524;
+    color: #ffb703;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    border-bottom: 3px solid #ee9b00;
+}
+
+.ticker-title {
+    background: #e63946;
+    color: #fff;
+    padding: 10px 20px;
+    font-weight: bold;
+    white-space: nowrap;
+    z-index: 2;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.3);
+}
+
+.ticker-text {
+    white-space: nowrap;
+    padding-left: 100%;
+    display: inline-block;
+    animation: marquee 22s linear infinite;
+    font-size: 17px;
+    font-weight: 600;
+}
+
+@keyframes marquee {
+    0% { transform: translate(0, 0); }
+    100% { transform: translate(-100%, 0); }
 }
 
 /* HERO SECTION */
@@ -219,7 +262,7 @@ table td{
     color: #2d3748;
 }
 
-/* HISTORY & NOTICE BOXES */
+/* INFO BOXES */
 .info-box{
     background: #ffffff;
     padding: 30px;
@@ -228,12 +271,7 @@ table td{
     border-left: 5px solid #0a9396;
 }
 
-/* CONTACT & MAP */
-.contact-info p {
-    font-size: 17px;
-    margin-bottom: 10px;
-}
-
+/* MAP & CONTACT */
 iframe{
     width: 100%;
     height: 380px;
@@ -242,25 +280,47 @@ iframe{
     box-shadow: 0 4px 12px rgba(0,0,0,0.08);
 }
 
+.contact-info p {
+    font-size: 17px;
+    margin-bottom: 10px;
+}
+
 /* FOOTER */
 footer{
-    background: #002b49;
+    background: #001524;
     color: white;
     text-align: center;
-    padding: 35px 20px;
+    padding: 40px 20px 25px 20px;
     margin-top: 40px;
 }
 
 footer h3{
-    margin-bottom: 10px;
+    margin-bottom: 15px;
     font-weight: 500;
+    font-size: 20px;
+}
+
+.credit-box {
+    margin-top: 20px;
+    padding: 18px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    border: 1px solid #0a9396;
+    display: inline-block;
 }
 
 .credit{
+    color: #00f5d4;
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+}
+
+.copyright {
     margin-top: 15px;
-    color: #cbd5e1;
+    color: #94a3b8;
     font-size: 14px;
-    border-top: 1px solid #1e40af;
+    border-top: 1px solid rgba(255,255,255,0.1);
     padding-top: 15px;
 }
 
@@ -268,23 +328,23 @@ footer h3{
     header h1{ font-size: 30px; }
     .hero h2{ font-size: 24px; }
     .section-title{ font-size: 26px; }
+    .ticker-title{ font-size: 14px; padding: 10px 10px; }
 }
 </style>
 </head>
 
 <body>
 
-<!-- HEADER -->
 <header>
-    <div class="logo-container">
+    <div class="school-logo">
         <span class="logo-icon">🏫</span>
+        <span class="logo-text">GHS KVP</span>
     </div>
     <h1>ജി.എച്ച്.എസ് കാവിലുംപാറ</h1>
     <p>ഗവൺമെന്റ് ഹൈസ്കൂൾ കാവിലുംപാറ</p>
     <p>സ്ഥാപിതം : 1954</p>
 </header>
 
-<!-- NAVIGATION -->
 <nav>
     <ul>
         <li><a href="#details">വിവരങ്ങൾ</a></li>
@@ -301,13 +361,18 @@ footer h3{
     </ul>
 </nav>
 
-<!-- HERO -->
+<div class="ticker-container">
+    <div class="ticker-title">📢 വാർത്തകൾ:</div>
+    <div class="ticker-text">
+        🎉 ഈ വർഷത്തെ SSLC പരീക്ഷയിൽ 100% വിജയം! &nbsp;&nbsp;&nbsp;&nbsp;🏆 NMMS, USS, LSS സ്കോളർഷിപ്പ് പരീക്ഷകളിൽ ഉപജില്ലാ തലത്തിൽ ഉജ്ജ്വല വിജയം നേടി ജി.എച്ച്.എസ് കാവിലുംപാറ! &nbsp;&nbsp;&nbsp;&nbsp;✨ പ്രവേശനവും അക്കാദമിക പ്രവർത്തനങ്ങളും പുരോഗമിക്കുന്നു.
+    </div>
+</div>
+
 <div class="hero">
     <h2>കേരളത്തിന്റെ അഭിമാന പൊതുവിദ്യാലയം</h2>
     <p>1954 മുതൽ വിദ്യാഭ്യാസ രംഗത്ത് പ്രവർത്തിച്ചു വരുന്ന ജി.എച്ച്.എസ് കാവിലുംപാറ, മികവുറ്റ അക്കാദമിക അന്തരീക്ഷവും അത്യാധുനിക പഠന സൗകര്യങ്ങളും വിദ്യാർത്ഥികൾക്കായി ഒരുക്കുന്നു.</p>
 </div>
 
-<!-- QUICK STATS -->
 <section>
     <div class="stats-grid">
         <div class="stat-card">
@@ -329,7 +394,6 @@ footer h3{
     </div>
 </section>
 
-<!-- SCHOOL DETAILS -->
 <section id="details">
     <h2 class="section-title">📚 സ്കൂൾ വിവരങ്ങൾ</h2>
     <table>
@@ -348,7 +412,6 @@ footer h3{
     </table>
 </section>
 
-<!-- ADMINISTRATION -->
 <section id="administration">
     <h2 class="section-title">👨‍🏫 ഭരണസമിതി</h2>
     <div class="cards">
@@ -356,7 +419,10 @@ footer h3{
             <h3>ഹെഡ്മിസ്ട്രസ്</h3>
             <p><strong>ശ്രീജ പി</strong></p>
         </div>
- <div>
+        <div class="card">
+            <h3>സീനിയർ അസിസ്റ്റന്റ്</h3>
+            <p><strong>ഷീല ആന്റണി</strong></p>
+        </div>
         <div class="card">
             <h3>പി.ടി.എ പ്രസിഡണ്ട്</h3>
             <p><strong>രാജീവ്</strong></p>
@@ -364,7 +430,6 @@ footer h3{
     </div>
 </section>
 
-<!-- FACILITIES -->
 <section id="facilities">
     <h2 class="section-title">💻 ആധുനിക സൗകര്യങ്ങൾ</h2>
     <div class="cards">
@@ -391,7 +456,6 @@ footer h3{
     </div>
 </section>
 
-<!-- ABOUT -->
 <section id="about">
     <h2 class="section-title">🏫 സ്കൂളിന്റെ പ്രത്യേകതകൾ</h2>
     <div class="cards">
@@ -414,7 +478,6 @@ footer h3{
     </div>
 </section>
 
-<!-- HISTORY -->
 <section id="history">
     <h2 class="section-title">📜 സ്കൂളിന്റെ ചരിത്രം</h2>
     <div class="info-box">
@@ -422,7 +485,6 @@ footer h3{
     </div>
 </section>
 
-<!-- CLUBS -->
 <section id="clubs">
     <h2 class="section-title">🚩 പ്രധാന ക്ലബ്ബുകൾ</h2>
     <div class="cards">
@@ -439,13 +501,12 @@ footer h3{
             <p>ഡിജിറ്റൽ സാങ്കേതികവിദ്യയിലും ഐ.ടി രംഗത്തും കുട്ടികളുടെ കഴിവുകൾ വികസിപ്പിക്കുന്നു.</p>
         </div>
         <div class="card">
-            <h3>🌱 എൻവയോൺമെന്റ് ക്ലബ്ബ്</h3>
-            <p>പ്രകൃതി സംരക്ഷണ പ്രവർത്തനങ്ങളും പരിസ്ഥിതി ബോധവത്കരണവും.</p>
+            <h3>🤝 സ്കൂൾ സോഷ്യൽ സർവീസ് സ്കീം (SSSS)</h3>
+            <p>വിദ്യാർത്ഥികളിൽ സാമൂഹിക സേവന താല്പര്യവും പൊതുനന്മയ്ക്കായുള്ള പങ്കാളിത്തവും വളർത്തുന്നു.</p>
         </div>
     </div>
 </section>
 
-<!-- TRAINING -->
 <section id="training">
     <h2 class="section-title">🏅 പരിശീലനങ്ങൾ</h2>
     <div class="cards">
@@ -457,7 +518,6 @@ footer h3{
     </div>
 </section>
 
-<!-- ACHIEVEMENTS -->
 <section id="achievements">
     <h2 class="section-title">🏆 നേട്ടങ്ങൾ</h2>
     <div class="cards">
@@ -476,7 +536,6 @@ footer h3{
     </div>
 </section>
 
-<!-- NOTICE -->
 <section id="notice">
     <h2 class="section-title">📢 നോട്ടീസ് ബോർഡ്</h2>
     <div class="info-box">
@@ -484,13 +543,11 @@ footer h3{
     </div>
 </section>
 
-<!-- LOCATION -->
 <section id="location">
     <h2 class="section-title">📍 സ്കൂൾ ലൊക്കേഷൻ</h2>
     <iframe src="https://www.google.com/maps?q=Kavilumpara&output=embed"></iframe>
 </section>
 
-<!-- CONTACT -->
 <section id="contact">
     <h2 class="section-title">📞 ബന്ധപ്പെടാൻ</h2>
     <div class="info-box contact-info">
@@ -501,10 +558,14 @@ footer h3{
     </div>
 </section>
 
-<!-- FOOTER -->
 <footer>
     <h3>ജി.എച്ച്.എസ് കാവിലുംപാറ ഔദ്യോഗിക വെബ്സൈറ്റ്</h3>
-    <p class="credit">Made By Little Kites Unit GHS KAVILUMPARA and NAYANTHEJ.S</p>
+    
+    <div class="credit-box">
+        <p class="credit">💻 Made By Little Kites Unit GHS KAVILUMPARA and NAYANTHEJ . S.</p>
+    </div>
+
+    <p class="copyright">Copyright © GHS Kavilumpara. All Rights Reserved.</p>
 </footer>
 
 </body>
