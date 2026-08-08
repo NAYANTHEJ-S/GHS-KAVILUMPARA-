@@ -1,5 +1,7 @@
 # GHS-KAVILUMPARA-
-This is a website for school                                                                                             designed by                                                                                                               
+This is a website for school                                                                                             
+
+designed by                                                                                                               
 Nayanthej.S 
 <!DOCTYPE html>
 <html lang="ml">
