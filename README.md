@@ -1,5 +1,6 @@
 # GHS-KAVILUMPARA-
-This is a website for school
+This is a website for school 
+Nayanthej.S 
 <!DOCTYPE html>
 <html lang="ml">
 <head>
@@ -549,7 +550,7 @@ footer h3{
     <h2 class="section-title">📞 ബന്ധപ്പെടാൻ</h2>
     <div class="info-box contact-info">
         <p><strong>ഫോൺ:</strong> 0496 2564436</p>
-        <p><strong>മൊബൈൽ:</strong> 97454 04453, 89210 35867, 9656503005</p>
+        
         <p><strong>ഇമെയിൽ:</strong> ghskavilumpara@gmail.com</p>
         <p><strong>വിലാസം:</strong> ഗവൺമെന്റ് ഹൈസ്കൂൾ കാവിലുംപാറ, കാവിലുംപാറ പി.ഒ, കോഴിക്കോട് - 673513</p>
     </div>
