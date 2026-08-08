@@ -554,6 +554,7 @@ footer h3{
         <p><strong>വിലാസം:</strong> ഗവൺമെന്റ് ഹൈസ്കൂൾ കാവിലുംപാറ, കാവിലുംപാറ പി.ഒ, കോഴിക്കോട് - 673513</p>
     </div>
 </section>
+<a href="https://schoolwiki.in/%E0%B4%9C%E0%B4%BF.%E0%B4%8E%E0%B4%9A%E0%B5%8D%E0%B4%9A%E0%B5%8D.%E0%B4%8E%E0%B4%B8%E0%B5%8D._%E0%B4%95%E0%B4%BE%E0%B4%B5%E0%B4%BF%E0%B4%B2%E0%B5%81%E0%B4%82%E0%B4%AA%E0%B4%BE%E0%B4%B1" target="_blank">GHS Kavilumpara School Wiki</a>
 
 <footer>
     <h3>ജി.എച്ച്.എസ് കാവിലുംപാറ ഔദ്യോഗിക വെബ്സൈറ്റ്</h3>
