@@ -1,5 +1,5 @@
 # GHS-KAVILUMPARA-
-This is a website for school 
+This is a website for school                                                                                               
 Nayanthej.S 
 <!DOCTYPE html>
 <html lang="ml">
