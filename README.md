@@ -365,7 +365,7 @@ footer h3{
 <div class="ticker-container">
     <div class="ticker-title">📢 വാർത്തകൾ:</div>
     <div class="ticker-text">
-        🎉 ഈ വർഷത്തെ SSLC പരീക്ഷയിൽ 100% വിജയം! &nbsp;&nbsp;&nbsp;&nbsp;🏆 NMMS, USS, LSS സ്കോളർഷിപ്പ് പരീക്ഷകളിൽ ഉപജില്ലാ തലത്തിൽ ഉജ്ജ്വല വിജയം നേടി ജി.എച്ച്.എസ് കാവിലുംപാറ! &nbsp;&nbsp;&nbsp;&nbsp;✨ പ്രവേശനവും അക്കാദമിക പ്രവർത്തനങ്ങളും പുരോഗമിക്കുന്നു.
+        🎉 2025-26 SSLC പരീക്ഷയിൽ 100% വിജയം! &nbsp;&nbsp;&nbsp;&nbsp;🏆 INSPIRE AWARD, NMMS, USS, LSS സ്കോളർഷിപ്പ് പരീക്ഷകളിൽ ഉപജില്ലാ തലത്തിൽ ഉജ്ജ്വല വിജയം നേടി ജി.എച്ച്.എസ് കാവിലുംപാറ! &nbsp;&nbsp;&nbsp;&nbsp;✨ പ്രവേശനവും അക്കാദമിക പ്രവർത്തനങ്ങളും പുരോഗമിക്കുന്നു.
     </div>
 </div>
 
