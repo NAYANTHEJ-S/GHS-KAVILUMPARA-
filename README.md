@@ -346,6 +346,8 @@ footer h3{
     <h1>ജി.എച്ച്.എസ് കാവിലുംപാറ</h1>
     <p>ഗവൺമെന്റ് ഹൈസ്കൂൾ കാവിലുംപാറ</p>
     <p>സ്ഥാപിതം : 1954</p>
+    <img src="School photo for website.png" alt="സ്‌കൂൾ ഫോട്ടോ" width="500">
+
 </header>
 
 <nav>
