@@ -562,10 +562,11 @@ footer h3{
 
 
 <footer>
-    <h3>ജി.എച്ച്.എസ് കാവിലുംപാറ ഔദ്യോഗിക വെബ്സൈറ്റ്</h3>
+    <h3>GHS Kavilumpara official website</h3>
     
     <div class="credit-box">
-        <p class="credit">💻 Made By Little Kites Unit GHS KAVILUMPARA & NAYANTHEJ . S.</p>
+        <p class="credit">💻Designed & Developed by NAYANTHEJ.S.</p>
+        <p>LITTLE KITES UNIT GHS KAVILUMPARA</p>
     </div>
 
     <p class="copyright">Copyright © GHS Kavilumpara. All Rights Reserved.</p>
