@@ -37,8 +37,7 @@ header{
 .school-logo {
     width: 110px;
     height: 110px;
-    background: #ffffff;
-    border: 4px solid #ee9b00;
+    background: #ffffff
     border-radius: 50%;
     margin: 0 auto 15px auto;
     display: flex;
