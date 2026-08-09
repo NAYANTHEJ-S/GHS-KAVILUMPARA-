@@ -340,8 +340,9 @@ footer h3{
 
 <header>
     <div class="school-logo">
-        <span class="logo-icon">🏫</span>
-        <span class="logo-text">GHS KVP</span>
+        <span class="logo-icon"><img src="school logo. jpg" alt="സ്‌കൂൾ ലോഗോ" width="500">
+</span>
+       
     </div>
     <h1>ജി.എച്ച്.എസ് കാവിലുംപാറ</h1>
     <p>ഗവൺമെന്റ് ഹൈസ്കൂൾ കാവിലുംപാറ</p>
