@@ -340,7 +340,7 @@ footer h3{
 
 <header>
     <div class="school-logo">
-        <span class="logo-icon"><img src="school logo. jpg" alt="സ്‌കൂൾ ലോഗോ" width="500">
+        <span class="logo-icon"><img src="School logo.jpg" alt="സ്‌കൂൾ ലോഗോ" width="500">
 </span>
        
     </div>
