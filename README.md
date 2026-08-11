@@ -9,111 +9,6 @@ Nayanthej.S
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ജി.എച്ച്.എസ് കാവിലുംപാറ</title>
-<div id="ai-chat-container" style="max-width: 420px; margin: 20px auto; border: 1px solid #dcdcdc; border-radius: 12px; padding: 16px; font-family: sans-serif; box-shadow: 0 4px 12px rgba(0,0,0,0.08); background: #ffffff;">
-  <h3 style="margin: 0 0 12px 0; color: #1a73e8; text-align: center; font-size: 18px;">GHS Kavilumpara Assistant 🤖</h3>
-  
-  <div id="chat-box" style="height: 280px; overflow-y: auto; border: 1px solid #f0f0f0; padding: 10px; margin-bottom: 12px; border-radius: 8px; background: #f9f9f9; display: flex; flex-direction: column; gap: 8px;">
-    <div style="background: #e8f0fe; padding: 8px 12px; border-radius: 8px; max-width: 85%; align-self: flex-start; color: #1f1f1f; font-size: 14px;">
-      നമസ്കാരം! ജി.എച്ച്.എസ്. കാവിലുംപാറ സ്കൂളിനെക്കുറിച്ചുള്ള വിവരങ്ങൾ ചോദിക്കൂ.
-    </div>
-  </div>
-
-  <div style="display: flex; gap: 6px;">
-    <input type="text" id="user-input" placeholder="ചോദ്യം ചോദിക്കൂ..." onkeypress="handleKeyPress(event)" style="flex: 1; padding: 10px; border: 1px solid #ccc; border-radius: 6px; outline: none; font-size: 14px;">
-    <button onclick="askBot()" style="padding: 10px 16px; background-color: #1a73e8; color: white; border: none; border-radius: 6px; cursor: pointer; font-weight: bold;">Ask</button>
-  </div>
-</div>
-
-<script>
-// വെബ്‌സൈറ്റിലെ മുഴുവൻ വിവരങ്ങളും അടിസ്ഥാനമാക്കിയുള്ള ഡാറ്റാബേസ്
-const knowledgeBase = [
-  {
-    patterns: ["പേര്", "സ്കൂളിന്റെ പേര്", "സ്കൂൾ"],
-    answer: "ജി.എച്ച്.എസ്. കാവിലുംപാറ (GHS Kavilumpara)."
-  },
-  {
-    patterns: ["എന്ന്", "എപ്പോഴാണ്", "ആരംഭിച്ചു", "തുടങ്ങി", "സ്ഥാപിച്ചു", "പ്രവർത്തനം", "വർഷം"],
-    answer: "ജി.എച്ച്.എസ്. കാവിലുംപാറ 1954-ലാണ് പ്രവർത്തനം ആരംഭിച്ചത്."
-  },
-  {
-    patterns: ["സ്ഥലം", "എവിടെ", "വിലാസം", "സ്ഥിതി"],
-    answer: "കോഴിക്കോട് ജില്ലയിലെ കവിലുംപാറ പഞ്ചായത്തിലാണ് ഈ സ്കൂൾ സ്ഥിതി ചെയ്യുന്നത്."
-  },
-  {
-    patterns: ["പഞ്ചായത്ത്"],
-    answer: "കവിലുംപാറ പഞ്ചായത്ത്."
-  },
-  {
-    patterns: ["ഉപജില്ല", "സബ്‌ഡിവിഷൻ", "സബ് ഡിസ്ട്രിക്റ്റ്"],
-    answer: "കുന്നുമ്മൽ ഉപജില്ല (Kunnummal Sub-District)."
-  },
-  {
-    patterns: ["വിദ്യാഭ്യാസ ജില്ല", "റവന്യൂ ജില്ല", "ജില്ല"],
-    answer: "കോഴിക്കോട് റവന്യൂ വിദ്യാഭ്യാസ ജില്ല."
-  },
-  {
-    patterns: ["ഏത് സ്കൂൾ", "ടൈപ്പ്", "വിഭാഗം", "ഹൈസ്കൂൾ", "ഹയർ സെക്കൻഡറി"],
-    answer: "ഇതൊരു ഹൈസ്കൂൾ (High School) ആണ്."
-  },
-  {
-    patterns: ["ക്ലാസുകൾ", "ഏതൊക്കെ ക്ലാസ്", "പഠനം"],
-    answer: "8, 9, 10 ക്ലാസുകളാണ് (ഹൈസ്കൂൾ വിഭാഗം) ഈ സ്കൂളിലുള്ളത്."
-  },
-  {
-    patterns: ["ഹലോ", "ഹായ്", "നമസ്കാരം"],
-    answer: "നമസ്കാരം! GHS കാവിലുംപാറ സ്കൂളിനെക്കുറിച്ച് എന്താണ് അറിയേണ്ടത്?"
-  }
-];
-
-function handleKeyPress(event) {
-  if (event.key === "Enter") askBot();
-}
-
-function askBot() {
-  const inputEl = document.getElementById("user-input");
-  const chatBox = document.getElementById("chat-box");
-  const text = inputEl.value.trim();
-
-  if (!text) return;
-
-  chatBox.innerHTML += `
-    <div style="background: #1a73e8; color: white; padding: 8px 12px; border-radius: 8px; max-width: 85%; align-self: flex-end; font-size: 14px;">
-      ${text}
-    </div>`;
-
-  inputEl.value = "";
-  chatBox.scrollTop = chatBox.scrollHeight;
-
-  const cleanQuery = text.toLowerCase();
-  let bestMatch = null;
-  let maxMatches = 0;
-
-  for (const item of knowledgeBase) {
-    let score = 0;
-    for (const pattern of item.patterns) {
-      if (cleanQuery.includes(pattern)) {
-        score++;
-      }
-    }
-    if (score > maxMatches) {
-      maxMatches = score;
-      bestMatch = item.answer;
-    }
-  }
-
-  const reply = maxMatches > 0 
-    ? bestMatch 
-    : "ക്ഷമിക്കണം, ഈ ചോദ്യത്തിനുള്ള ഉത്തരം ലഭ്യമല്ല. സ്കൂൾ തുടങ്ങിയ വർഷം, ഉപജില്ല, പഞ്ചായത്ത് തുടങ്ങിയ വിവരങ്ങൾ ചോദിക്കൂ.";
-
-  setTimeout(() => {
-    chatBox.innerHTML += `
-      <div style="background: #e8f0fe; padding: 8px 12px; border-radius: 8px; max-width: 85%; align-self: flex-start; color: #1f1f1f; font-size: 14px;">
-        ${reply}
-      </div>`;
-    chatBox.scrollTop = chatBox.scrollHeight;
-  }, 250);
-}
-</script>
 
 <style>
 *{
@@ -700,7 +595,112 @@ function toggleText() {
 </section>.
 <h3>സ്കൂൾ വിക്കിയിലേക്കുള്ള നേരിട്ടുള്ള ലിങ്ക്</h3>
 <a href="https://schoolwiki.in/%E0%B4%9C%E0%B4%BF.%E0%B4%8E%E0%B4%9A%E0%B5%8D%E0%B4%9A%E0%B5%8D.%E0%B4%8E%E0%B4%B8%E0%B5%8D._%E0%B4%95%E0%B4%BE%E0%B4%B5%E0%B4%BF%E0%B4%B2%E0%B5%81%E0%B4%82%E0%B4%AA%E0%B4%BE%E0%B4%B1" target="_blank">GHS Kavilumpara School Wiki</a>
+<div id="ai-chat-container" style="max-width: 420px; margin: 20px auto; border: 1px solid #dcdcdc; border-radius: 12px; padding: 16px; font-family: sans-serif; box-shadow: 0 4px 12px rgba(0,0,0,0.08); background: #ffffff;">
+  <h3 style="margin: 0 0 12px 0; color: #1a73e8; text-align: center; font-size: 18px;">GHS Kavilumpara Assistant 🤖</h3>
+  
+  <div id="chat-box" style="height: 280px; overflow-y: auto; border: 1px solid #f0f0f0; padding: 10px; margin-bottom: 12px; border-radius: 8px; background: #f9f9f9; display: flex; flex-direction: column; gap: 8px;">
+    <div style="background: #e8f0fe; padding: 8px 12px; border-radius: 8px; max-width: 85%; align-self: flex-start; color: #1f1f1f; font-size: 14px;">
+      നമസ്കാരം! ജി.എച്ച്.എസ്. കാവിലുംപാറ സ്കൂളിനെക്കുറിച്ചുള്ള വിവരങ്ങൾ ചോദിക്കൂ.
+    </div>
+  </div>
 
+  <div style="display: flex; gap: 6px;">
+    <input type="text" id="user-input" placeholder="ചോദ്യം ചോദിക്കൂ..." onkeypress="handleKeyPress(event)" style="flex: 1; padding: 10px; border: 1px solid #ccc; border-radius: 6px; outline: none; font-size: 14px;">
+    <button onclick="askBot()" style="padding: 10px 16px; background-color: #1a73e8; color: white; border: none; border-radius: 6px; cursor: pointer; font-weight: bold;">Ask</button>
+  </div>
+</div>
+
+<script>
+// വെബ്‌സൈറ്റിലെ മുഴുവൻ വിവരങ്ങളും അടിസ്ഥാനമാക്കിയുള്ള ഡാറ്റാബേസ്
+const knowledgeBase = [
+  {
+    patterns: ["പേര്", "സ്കൂളിന്റെ പേര്", "സ്കൂൾ"],
+    answer: "ജി.എച്ച്.എസ്. കാവിലുംപാറ (GHS Kavilumpara)."
+  },
+  {
+    patterns: ["എന്ന്", "എപ്പോഴാണ്", "ആരംഭിച്ചു", "തുടങ്ങി", "സ്ഥാപിച്ചു", "പ്രവർത്തനം", "വർഷം"],
+    answer: "ജി.എച്ച്.എസ്. കാവിലുംപാറ 1954-ലാണ് പ്രവർത്തനം ആരംഭിച്ചത്."
+  },
+  {
+    patterns: ["സ്ഥലം", "എവിടെ", "വിലാസം", "സ്ഥിതി"],
+    answer: "കോഴിക്കോട് ജില്ലയിലെ കവിലുംപാറ പഞ്ചായത്തിലാണ് ഈ സ്കൂൾ സ്ഥിതി ചെയ്യുന്നത്."
+  },
+  {
+    patterns: ["പഞ്ചായത്ത്"],
+    answer: "കവിലുംപാറ പഞ്ചായത്ത്."
+  },
+  {
+    patterns: ["ഉപജില്ല", "സബ്‌ഡിവിഷൻ", "സബ് ഡിസ്ട്രിക്റ്റ്"],
+    answer: "കുന്നുമ്മൽ ഉപജില്ല (Kunnummal Sub-District)."
+  },
+  {
+    patterns: ["വിദ്യാഭ്യാസ ജില്ല", "റവന്യൂ ജില്ല", "ജില്ല"],
+    answer: "കോഴിക്കോട് റവന്യൂ വിദ്യാഭ്യാസ ജില്ല."
+  },
+  {
+    patterns: ["ഏത് സ്കൂൾ", "ടൈപ്പ്", "വിഭാഗം", "ഹൈസ്കൂൾ", "ഹയർ സെക്കൻഡറി"],
+    answer: "ഇതൊരു ഹൈസ്കൂൾ (High School) ആണ്."
+  },
+  {
+    patterns: ["ക്ലാസുകൾ", "ഏതൊക്കെ ക്ലാസ്", "പഠനം"],
+    answer: "8, 9, 10 ക്ലാസുകളാണ് (ഹൈസ്കൂൾ വിഭാഗം) ഈ സ്കൂളിലുള്ളത്."
+  },
+  {
+    patterns: ["ഹലോ", "ഹായ്", "നമസ്കാരം"],
+    answer: "നമസ്കാരം! GHS കാവിലുംപാറ സ്കൂളിനെക്കുറിച്ച് എന്താണ് അറിയേണ്ടത്?"
+  }
+];
+
+function handleKeyPress(event) {
+  if (event.key === "Enter") askBot();
+}
+
+function askBot() {
+  const inputEl = document.getElementById("user-input");
+  const chatBox = document.getElementById("chat-box");
+  const text = inputEl.value.trim();
+
+  if (!text) return;
+
+  chatBox.innerHTML += `
+    <div style="background: #1a73e8; color: white; padding: 8px 12px; border-radius: 8px; max-width: 85%; align-self: flex-end; font-size: 14px;">
+      ${text}
+    </div>`;
+
+  inputEl.value = "";
+  chatBox.scrollTop = chatBox.scrollHeight;
+
+  const cleanQuery = text.toLowerCase();
+  let bestMatch = null;
+  let maxMatches = 0;
+
+  for (const item of knowledgeBase) {
+    let score = 0;
+    for (const pattern of item.patterns) {
+      if (cleanQuery.includes(pattern)) {
+        score++;
+      }
+    }
+    if (score > maxMatches) {
+      maxMatches = score;
+      bestMatch = item.answer;
+    }
+  }
+
+  const reply = maxMatches > 0 
+    ? bestMatch 
+    : "ക്ഷമിക്കണം, ഈ ചോദ്യത്തിനുള്ള ഉത്തരം ലഭ്യമല്ല. സ്കൂൾ തുടങ്ങിയ വർഷം, ഉപജില്ല, പഞ്ചായത്ത് തുടങ്ങിയ വിവരങ്ങൾ ചോദിക്കൂ.";
+
+  setTimeout(() => {
+    chatBox.innerHTML += `
+      <div style="background: #e8f0fe; padding: 8px 12px; border-radius: 8px; max-width: 85%; align-self: flex-start; color: #1f1f1f; font-size: 14px;">
+        ${reply}
+      </div>`;
+    chatBox.scrollTop = chatBox.scrollHeight;
+  }, 250);
+}
+</script>
+ 
 
 <footer>
     <h3>GHS Kavilumpara official website</h3>
