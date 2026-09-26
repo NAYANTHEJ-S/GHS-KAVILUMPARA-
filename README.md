@@ -427,7 +427,7 @@ footer h3{
   
         <div class="card">
             <h3>പി.ടി.എ പ്രസിഡണ്ട്</h3>
-            <p><strong>രാജീവൻ</strong></p>
+            <p><strong>സരിത സുഭാഷ് കെ. ടി. കെ </strong></p>
         </div>
     </div>
 </section>
